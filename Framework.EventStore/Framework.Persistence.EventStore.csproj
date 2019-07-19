@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9AA40A2-DF74-4034-B113-2C5C07F3A447}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework.Persistence.EventStore</RootNamespace>
+    <AssemblyName>Framework.Persistence.EventStore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EventStore.ClientAPI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventStore.Client.5.0.1\lib\net46\EventStore.ClientAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.4.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.4.0\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregateFactory.cs" />
+    <Compile Include="Extentions\EventExtentions.cs" />
+    <Compile Include="Extentions\StreamNameGenerator.cs" />
+    <Compile Include="Extentions\StreamNameResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\EventStoreBaseRepository.cs" />
+    <Compile Include="Snapshot\ISnapshotReader.cs" />
+    <Compile Include="Snapshot\ISnapshotter.cs" />
+    <Compile Include="Snapshot\SnapshotReader.cs" />
+    <Compile Include="Snapshot\Snapshotter.cs" />
+    <Compile Include="TypeResolver.cs" />
+    <Compile Include="UnitOfWork\EventStoreUnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.DomainModel.Events\Framework.DomainModel.Events.csproj">
+      <Project>{65AFA2D2-1185-4A4A-935F-DFA376891E88}</Project>
+      <Name>Framework.DomainModel.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.DomainModel.Interfaces\Framework.DomainModel.Core.csproj">
+      <Project>{5B0E8CBE-3E73-4B2C-810D-2B52A469CEA6}</Project>
+      <Name>Framework.DomainModel.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.DomainModel\Framework.DomainModel.csproj">
+      <Project>{7CEC4832-A3C9-48AF-92DC-3E6508A07857}</Project>
+      <Name>Framework.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Persistence.Core\Framework.Persistence.Core.csproj">
+      <Project>{9E756FAB-EE83-4927-8BC1-5387056A1C0F}</Project>
+      <Name>Framework.Persistence.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

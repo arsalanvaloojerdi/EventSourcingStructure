@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F2EBF32-65FD-4895-92CF-DCC5D2A15DE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EventSource.Structure.CommandHandlers</RootNamespace>
+    <AssemblyName>EventSource.Structure.CommandHandlers</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Company\CompanyCommandHandlers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventSource.Structure.Application\Framework.Application.csproj">
+      <Project>{B8F4146A-A04F-463F-9F9A-D0EBB97E0D0C}</Project>
+      <Name>Framework.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventSource.Structure.Commands\EventSource.Structure.Commands.csproj">
+      <Project>{3BE236DD-94FF-49B9-A5F1-4DE2450D407D}</Project>
+      <Name>EventSource.Structure.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventSource.Structure.DomainModel\EventSource.Structure.DomainModel.csproj">
+      <Project>{66D6D199-1138-48FA-953E-3E3A0DCC0D12}</Project>
+      <Name>EventSource.Structure.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Application.Contracts\Framework.Application.Contracts.csproj">
+      <Project>{CFFDE206-E672-4142-B6AF-15C43B9324B9}</Project>
+      <Name>Framework.Application.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Core.Exceptions\Framework.Core.Exceptions.csproj">
+      <Project>{463209AB-9A83-4F13-B598-B73D3FF05970}</Project>
+      <Name>Framework.Core.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.DomainModel\Framework.DomainModel.csproj">
+      <Project>{7CEC4832-A3C9-48AF-92DC-3E6508A07857}</Project>
+      <Name>Framework.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Persistence.Core\Framework.Persistence.Core.csproj">
+      <Project>{9E756FAB-EE83-4927-8BC1-5387056A1C0F}</Project>
+      <Name>Framework.Persistence.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

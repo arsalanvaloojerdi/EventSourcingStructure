@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CEA5A95-8DAC-4371-9D5B-B3DC8D9C7C0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EventSource.Structure.Config.CommandApi</RootNamespace>
+    <AssemblyName>EventSource.Structure.Config.CommandApi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.5.0.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventSource.Structure.Application\Framework.Application.csproj">
+      <Project>{B8F4146A-A04F-463F-9F9A-D0EBB97E0D0C}</Project>
+      <Name>Framework.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventSource.Structure.CommandHandlers\EventSource.Structure.CommandHandlers.csproj">
+      <Project>{5F2EBF32-65FD-4895-92CF-DCC5D2A15DE7}</Project>
+      <Name>EventSource.Structure.CommandHandlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventSource.Structure.DomainModel.Events\EventSource.Structure.DomainModel.Events.csproj">
+      <Project>{6381189a-e4ac-41b9-8a87-06a7289a7151}</Project>
+      <Name>EventSource.Structure.DomainModel.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventSource.Structure.DomainModel\EventSource.Structure.DomainModel.csproj">
+      <Project>{66D6D199-1138-48FA-953E-3E3A0DCC0D12}</Project>
+      <Name>EventSource.Structure.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventSource.Structure.Logging\EventSource.Structure.Infrastructure.Logging.csproj">
+      <Project>{A690B23B-4D63-4ECF-908D-20C25EE19483}</Project>
+      <Name>EventSource.Structure.Infrastructure.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventSource.Structure.Persistence.EventStore\EventSource.Structure.Persistence.EventStore.csproj">
+      <Project>{AFF01C9E-CAFF-4EB7-B95A-F9DA06C6FFE4}</Project>
+      <Name>EventSource.Structure.Persistence.EventStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Application.Contracts\Framework.Application.Contracts.csproj">
+      <Project>{CFFDE206-E672-4142-B6AF-15C43B9324B9}</Project>
+      <Name>Framework.Application.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Config.Castle\Framework.Config.Castle.csproj">
+      <Project>{C161262F-261E-4DC8-ABC6-E501296C4178}</Project>
+      <Name>Framework.Config.Castle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.DomainModel.Events\Framework.DomainModel.Events.csproj">
+      <Project>{65AFA2D2-1185-4A4A-935F-DFA376891E88}</Project>
+      <Name>Framework.DomainModel.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.EventStore\Framework.Persistence.EventStore.csproj">
+      <Project>{D9AA40A2-DF74-4034-B113-2C5C07F3A447}</Project>
+      <Name>Framework.Persistence.EventStore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
