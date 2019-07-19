@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EventSource.Structure.QueryModel.Synchronizer.Config")]
+[assembly: AssemblyTitle("EventSource.Structure.Config.QueryModel.Syncrhonizer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EventSource.Structure.QueryModel.Synchronizer.Config")]
+[assembly: AssemblyProduct("EventSource.Structure.Config.QueryModel.Syncrhonizer")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

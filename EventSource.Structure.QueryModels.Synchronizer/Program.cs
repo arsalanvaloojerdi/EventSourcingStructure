@@ -1,7 +1,7 @@
 ﻿using Castle.MicroKernel.Lifestyle;
-using EventSource.Structure.QueryModel.Synchronizer.Config;
 using Framework.QueryModel.Synchronizer.Subscriber;
 using System;
+using EventSource.Structure.Config.QueryModel.Syncrhonizer;
 
 namespace EventSource.Structure.QueryModels.Synchronizer
 {

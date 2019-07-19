@@ -1,4 +1,6 @@
-﻿using Castle.MicroKernel.Registration;
+﻿using System.Net;
+using System.Reflection;
+using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using EventSource.Structure.Persistence.Sql.Context;
 using EventSource.Structure.Persistence.Sql.Repositories;
@@ -8,11 +10,9 @@ using Framework.Config.Castle;
 using Framework.Core;
 using Framework.QueryModel;
 using Framework.QueryModel.Synchronizer;
-using System.Net;
-using System.Reflection;
 using Component = Castle.MicroKernel.Registration.Component;
 
-namespace EventSource.Structure.QueryModel.Synchronizer.Config
+namespace EventSource.Structure.Config.QueryModel.Syncrhonizer
 {
 	public static class Bootstrapper
 	{

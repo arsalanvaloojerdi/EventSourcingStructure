@@ -81,9 +81,9 @@
       <Project>{6381189A-E4AC-41B9-8A87-06A7289A7151}</Project>
       <Name>EventSource.Structure.DomainModel.Events</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EventSource.Structure.QueryModel.Synchronizer.Config\EventSource.Structure.QueryModel.Synchronizer.Config.csproj">
+    <ProjectReference Include="..\EventSource.Structure.QueryModel.Synchronizer.Config\EventSource.Structure.Config.QueryModel.Syncrhonizer.csproj">
       <Project>{464B6A97-F567-4397-9410-1C473D45D9CE}</Project>
-      <Name>EventSource.Structure.QueryModel.Synchronizer.Config</Name>
+      <Name>EventSource.Structure.Config.QueryModel.Syncrhonizer</Name>
     </ProjectReference>
     <ProjectReference Include="..\EventSource.Structure.QueryModels\EventSource.Structure.QueryModels.csproj">
       <Project>{8C08BC6D-AC86-4236-A77C-EAC587DF0A08}</Project>

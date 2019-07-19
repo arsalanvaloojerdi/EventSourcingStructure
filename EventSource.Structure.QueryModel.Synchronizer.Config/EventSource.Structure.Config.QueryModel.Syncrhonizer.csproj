@@ -7,8 +7,8 @@
     <ProjectGuid>{464B6A97-F567-4397-9410-1C473D45D9CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EventSource.Structure.QueryModel.Synchronizer.Config</RootNamespace>
-    <AssemblyName>EventSource.Structure.QueryModel.Synchronizer.Config</AssemblyName>
+    <RootNamespace>EventSource.Structure.Config.QueryModel.Syncrhonizer</RootNamespace>
+    <AssemblyName>EventSource.Structure.Config.QueryModel.Syncrhonizer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
